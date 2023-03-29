@@ -17,6 +17,7 @@ public class WhileEx01 {
 			cnt++;
 		}while(cnt<10);
 		
+		
 
 	}
 
