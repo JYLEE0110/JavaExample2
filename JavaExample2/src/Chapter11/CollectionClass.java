@@ -16,14 +16,23 @@ public class CollectionClass {
 		}
 		displayList(lottoNumbers);
 		
-		System.out.println("최대값 "+Collections.max(lottoNumbers));
-		System.out.println("최소값 "+Collections.min(lottoNumbers));
+		System.out.println("최대 값 "+Collections.max(lottoNumbers));
+		System.out.println("최소 값 "+Collections.min(lottoNumbers));
+		
+		Collections.sort(lottoNumbers);
+		displayList(lottoNumbers);
+
+		Collections.reverse(lottoNumbers);
+		displayList(lottoNumbers);
+		
+		Collections.shuffle(lottoNumbers);
+		displayList(lottoNumbers);
 	}
 
 	static public <E> void displayList(List<E> list) {
-		System.out.println("---------------------");
 		for(E num : list) {
 			System.out.println(num);
 		}
+		System.out.println("---------------------");
 	}
 }
