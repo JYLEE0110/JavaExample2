@@ -31,6 +31,7 @@ public class InsertTest {
 			pstmt.setString(3, "SEOUL");
 
 			int result = pstmt.executeUpdate();
+			System.out.println(result);
 			
 			pstmt.close();
 			conn.close();

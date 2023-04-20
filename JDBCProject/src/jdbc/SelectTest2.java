@@ -35,6 +35,7 @@ public class SelectTest2 {
 //				System.out.println(rs.getInt(1) + "\t" + rs.getNString(2) + "\t" + rs.getString(3));
 //			}
 			if (rs.next()) {
+				//조건이 PK이므로 결과값은 1개 이므로 if로 처리
 				System.out.println(rs.getInt(1) + "\t" + rs.getString(2) + "\t" + rs.getString(3));
 			}
 			rs.close();

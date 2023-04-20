@@ -35,7 +35,7 @@ public class DeleteTest {
 			pstmt.setInt(1, 50);
 
 			int result = pstmt.executeUpdate();
-
+			System.out.println(result);
 			if (result > 0) {
 				System.out.println("Complete Delete Data");
 			} else {

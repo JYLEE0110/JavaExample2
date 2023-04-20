@@ -31,7 +31,8 @@ public class UpdateTest {
 			pstmt.setInt(3, 50);
 
 			int result = pstmt.executeUpdate();
-
+			
+			System.out.println(result);
 			pstmt.close();
 			conn.close();
 
