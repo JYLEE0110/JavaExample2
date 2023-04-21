@@ -14,10 +14,16 @@ public class DeptListService {
 	DeptDao dao;
 //	int num;
 
-	public DeptListService(DeptDao dao) {
-		this.dao = dao;
+	private DeptListService() {
+		this.dao = DeptDao.getInstance();
 	}
-
+	
+	private static DeptListService service = new DeptListService();
+	
+	public static DeptListService getInstance() {
+		return service;
+	}
+	
 	public List<Dept> getDeptList() {
 
 		Connection conn = null;
@@ -38,7 +44,7 @@ public class DeptListService {
 			// insert(conn)
 
 			list = dao.selectByAll(conn);
-			
+
 			// commit완료
 			conn.commit();
 
@@ -52,18 +58,26 @@ public class DeptListService {
 				}
 			}
 			e.printStackTrace();
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 
 		return list;
 	}
-	
-	//Test
+
+	// Test
 	public static void main(String[] args) throws SQLException {
-		DeptListService listService = new DeptListService(new DeptDao());
-		
+		DeptListService listService = new DeptListService();
+
 		List<Dept> list = listService.getDeptList();
-		
-		for(Dept d : list) {
+
+		for (Dept d : list) {
 			System.out.println(d);
 		}
 	}

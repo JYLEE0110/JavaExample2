@@ -11,10 +11,14 @@ public class DeptSearchService {
 
 	DeptDao dao;
 
-	public DeptSearchService() {
-		this.dao = new DeptDao();
+	private DeptSearchService() {
+		this.dao = DeptDao.getInstance();
 	}
-
+	
+	private static DeptSearchService service = new DeptSearchService();
+	public static DeptSearchService getInstance() {
+		return service;
+	}
 //	public DeptSearchService(DeptDao dao) {
 //		this.dao = dao;
 //	}
@@ -26,10 +30,30 @@ public class DeptSearchService {
 		Dept dept = null;
 		try {
 			conn = ConnectionProvider.getConnection();
+
+			conn.setAutoCommit(false);
+
 			dept = dao.selectByDeptno(conn, deptno);
+
+			conn.commit();
 		} catch (SQLException e) {
+			if (conn != null) {
+				try {
+					conn.rollback();
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+			}
 			// 데이터베이스 연결 실패
 			e.printStackTrace();
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
 		}
 		return dept;
 //		Dept dept = dao.selectByDeptno(deptno);
