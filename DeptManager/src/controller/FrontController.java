@@ -23,5 +23,6 @@ public class FrontController {
 		menu.put(3, DeptInsertController.getInstance());
 		menu.put(4, DeptUpdateController.getInstance());
 		menu.put(5, DeptDeleteController.getInstance());
+		
 	}
 }
