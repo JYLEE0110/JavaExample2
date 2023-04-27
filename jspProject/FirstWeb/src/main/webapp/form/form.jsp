@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,7 @@
 
 	<h1>Form Test</h1>
 	<!-- /web => context경로 -->
-	<form action = "/web/form/input" method = "get">
+	<form action = "<%= request.getContextPath() %>/form/input.jsp" method = "post">
 		내용입력<br>
 		<textarea name = "content" rows="5" cols="20">안녕하세요</textarea>
 		
