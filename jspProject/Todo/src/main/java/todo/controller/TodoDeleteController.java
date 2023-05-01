@@ -21,12 +21,12 @@ public class TodoDeleteController extends HttpServlet {
 		String noStr = request.getParameter("no");
 		int no = Integer.parseInt(noStr);
 		
+		
 		// 서비스로 no전달 -> 삭제 처리
 		
 		// 결과
 		System.out.println(no + "번 할일이 삭제 되었습니다.");
 		
-		// redirect (list)
 		response.sendRedirect("list");
 		
 	}

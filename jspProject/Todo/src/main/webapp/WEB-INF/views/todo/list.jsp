@@ -20,6 +20,10 @@
 		<li><a href = "${pageContext.request.contextPath }/todo/read?no=5">5. 청소 </a></li>
 	</ul>
 	
+	<div>
+		${todoList}
+	</div>
+	
 	<a href = "${pageContext.request.contextPath}/todo/register">TodoRegister</a>
 	
 	

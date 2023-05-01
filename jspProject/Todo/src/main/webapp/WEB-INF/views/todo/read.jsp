@@ -19,6 +19,7 @@
 		<a href = "modify?no=${no}">Modify</a><br>
 		<!-- <a href ="delete?no=${no}">Delete</a> -->
 
+		
 		<form action="delete" method="post">
 			<input type="hidden" name = "no" value = "${no}">
 			<input type = "submit" value="Delete">
