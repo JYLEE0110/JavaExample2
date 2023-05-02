@@ -11,10 +11,10 @@
 
 	<h1>TodoModify</h1>
 	<form method = "post">
-		Number : <input type ="text" name = "no" value = "${todo.no}" readonly> <br>
+		Number : <input type ="text" name = "no" value = "${todo.tno}" readonly> <br>
 		Todo : <input type ="text" name = "todo" value = "${todo.todo}" > <br>
 		Date : <input type ="date" name = "duedate" value = "${todo.duedate}" > <br>
-		Completed : <input type ="checkbox" name = "complete" ${todo.complete == 'done' ?'checked' : ''}><br>
+		Completed : <input type ="checkbox" name = "complete" ${todo.finished ?'checked' : ''}><br>
 		<input type ="reset" value="reset"> <input type ="submit" value="modify">
 	</form>
 </body>

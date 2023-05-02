@@ -20,7 +20,7 @@ public class TodoListController extends HttpServlet {
 	TodoListService listService;
 	
 	public TodoListController() {
-		this.listService = new TodoListService();
+		this.listService = TodoListService.getInstance();
 	}
 	// 화면에 리스트 출력 : Get 방식의 요청
 	// 브라우저의 url창에 입력해서 요청 => Get
@@ -36,10 +36,14 @@ public class TodoListController extends HttpServlet {
 		System.out.println("TodoListController... doGet()...");
 		
 		// 1. 사용자 요청의 분석
+		
 		// 2. Service에 요청 (Model에게 요청 지금은 X) -> 응답데이터 반환
 		List<TodoDTO> list = listService.getList();
+		//System.out.println(list);
+		
 		// 3. 응답 데이터 request의 속성에 저장 :view로 데이터 전달
 		request.setAttribute("todoList", list);
+		
 		// 4. view 지정 -> forward
 		
 		String viewPath = "/WEB-INF/views/todo/list.jsp";

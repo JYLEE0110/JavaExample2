@@ -9,8 +9,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import todo.domain.TodoDTO;
+import todo.service.TodoViewService;
+
 @WebServlet("/todo/read")
 public class TodoReadController extends HttpServlet {
+	
+	TodoViewService viewService;
+	
+	public TodoReadController() {
+		this.viewService = TodoViewService.getInstance();
+	}
+	
+//	private static TodoReadController controller
 	
 	protected void doGet(
 						HttpServletRequest request, 
@@ -24,15 +35,9 @@ public class TodoReadController extends HttpServlet {
 		int no = Integer.parseInt(noStr);
 		
 		//no값으로 Service를 통해서 Todo정보를 받아온다.
+		TodoDTO todo = viewService.getTodo(no); // no = 2
 		
-		String todo = "청th";
-		String duedate = "2023-05-05";
-		String complete = "done";
-		
-		request.setAttribute("no", no);
 		request.setAttribute("todo", todo);
-		request.setAttribute("duedate",duedate);
-		request.setAttribute("complete", complete);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/todo/read.jsp");
 		dispatcher.forward(request, response);
