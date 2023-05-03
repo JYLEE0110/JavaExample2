@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<h1>TodoList</h1>
+	<h1>TodoList (${loginInfo})</h1>
 	
 	<ul>
 		
@@ -24,7 +24,13 @@
 	
 	<a href = "${pageContext.request.contextPath}/todo/register">TodoRegister</a>
 	
+	<c:if test="${loginInfo eq null}">
+		<a href = "/app/index.jsp">login</a>
+	</c:if>
 	
+	<c:if test="${loginInfo ne null}">
+		<a href = "/app/logout">logout</a>
+	</c:if>
 		
 
 </body>

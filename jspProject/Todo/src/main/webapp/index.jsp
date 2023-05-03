@@ -2,6 +2,6 @@
     pageEncoding="UTF-8"%>
 
     <%
-    response.sendRedirect("todo/list");
+    response.sendRedirect("login");
     //     /app/
     %>
