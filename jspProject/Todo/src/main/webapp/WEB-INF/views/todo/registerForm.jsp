@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<h1>TodoRegister</h1>
+	<h1>TodoRegister (${loginInfo.uid} [${loginInfo.uname}])</h1>
 
 	<form method = "post">
 		Todo : <input type ="text" name = "todo"> <br>

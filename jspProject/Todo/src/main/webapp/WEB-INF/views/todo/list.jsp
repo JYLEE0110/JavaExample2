@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<h1>TodoList (${loginInfo})</h1>
+	<h1>TodoList (${loginInfo.uid} [${loginInfo.uname}])</h1>
 	
 	<ul>
 		

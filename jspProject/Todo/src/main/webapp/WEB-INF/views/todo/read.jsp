@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<h1>TodoRead</h1>
+	<h1>TodoRead (${loginInfo.uid} [${loginInfo.uname}])</h1>
 
 		Number : <input type ="text" name = "no" value = "${todo.tno}" readonly> <br>
 		Todo : <input type ="text" name = "todo" value = "${todo.todo}" readonly> <br>

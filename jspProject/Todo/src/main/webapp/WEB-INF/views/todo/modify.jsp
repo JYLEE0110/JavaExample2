@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<h1>TodoModify</h1>
+	<h1>TodoModify (${loginInfo.uid} [${loginInfo.uname}])</h1>
 	<form method = "post">
 		Number : <input type ="text" name = "no" value = "${todo.tno}" readonly> <br>
 		Todo : <input type ="text" name = "todo" value = "${todo.todo}" > <br>
