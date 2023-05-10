@@ -19,6 +19,7 @@ public class MemberRegisterService2 {
 //        this.dao = dao;
 //    }
 
+    //Property 방식
 //    public void setDao(Dao dao){
 //        this.dao = dao;
 //    }

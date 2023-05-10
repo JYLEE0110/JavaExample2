@@ -1,0 +1,19 @@
+
+Web Project
+
+1. Create Project : intellij
+
+2. build.gradle : Dependency Setting 
+		- Spring(core, context, test, webmvc, jdbc) / Log / Lombok / Jstl / FileUpload / Db(connectionPool, MyBatis)
+
+3. Setting Spring  : /WEB-INF/spring/
+	- Create SettingFile : 
+		+ root-context.xml
+			: Setting basic Spring / Setting DB 
+		+ servlet-context.xml(MVC) 
+			: Setting MVC -> Annotation, Resources(Static resources) Setting View
+	- web.xml : 
+	  +Regist SpringSettingFile : root-context.xml
+	  + Regist Servlet (mapping : "/") : servlet-context.xml
+
+	- Setting log4j2 : Create log4j2.xml

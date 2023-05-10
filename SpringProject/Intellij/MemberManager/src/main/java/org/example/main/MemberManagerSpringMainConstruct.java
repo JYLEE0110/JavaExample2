@@ -1,19 +1,19 @@
 package org.example.main;
 
-import org.example.assembler.Assembler;
-import org.example.dao.MemberDao;
 import org.example.domain.RegisterRequest;
 import org.example.service.ChangePasswordService;
+import org.example.service.ChangePasswordService2;
 import org.example.service.MemberRegisterService;
-import org.w3c.dom.ls.LSOutput;
+import org.example.service.MemberRegisterService2;
+import org.springframework.context.support.GenericXmlApplicationContext;
 
 import java.util.Scanner;
 
-public class MemberManagerMain {
+public class MemberManagerSpringMainConstruct {
 
     // 조립기 : 객체를 관리(생성, 주입, 제공...)
-    static Assembler assembler = new Assembler();
-
+    static GenericXmlApplicationContext ctx =
+            new GenericXmlApplicationContext("classpath:appCtx.xml");
 
     public static void main(String[] args) {
 
@@ -56,7 +56,7 @@ public class MemberManagerMain {
             return;
         }
 
-        MemberRegisterService registerService = assembler.getRegisterService();
+        MemberRegisterService registerService = ctx.getBean("memberRegisterService", MemberRegisterService.class);
         // new cool@gmail 1111 1111 COOL
         // [0]     [1]    [2]  [3]  [4]
         RegisterRequest request = new RegisterRequest();
@@ -82,7 +82,7 @@ public class MemberManagerMain {
             return;
         }
 
-        ChangePasswordService passwordService = assembler.getPasswordService();
+        ChangePasswordService passwordService = ctx.getBean("changePasswordService", ChangePasswordService.class);
 
         passwordService.changePassword(args[1], args[2], args[3]);
     }

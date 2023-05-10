@@ -13,9 +13,9 @@ public class MemberRegisterService {
     private Dao dao;
 
     // 생성자를 통해서 Dao를 주입
-//    public MemberRegisterService(Dao dao) { // new MemberDao
-//        this.dao = dao;
-//    }
+    public MemberRegisterService(Dao dao) { // new MemberDao
+        this.dao = dao;
+    }
 
     public void setDao(Dao dao){
         this.dao = dao;

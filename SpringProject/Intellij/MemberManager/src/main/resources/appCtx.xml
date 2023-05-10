@@ -9,10 +9,10 @@
     <bean id = "memberDao" class="org.example.dao.MemberDao"/>
 
     <bean id="memberRegisterService"
-          class = "org.example.service.MemberRegisterService" scope = "prototype">
-<!--        <constructor-arg>
+          class = "org.example.service.MemberRegisterService" scope = "singleton">
+        <constructor-arg>
             <ref bean="memberDao"/>
-        </constructor-arg>-->
+        </constructor-arg>
 
         <property name="dao">
             <ref bean="memberDao"/>
