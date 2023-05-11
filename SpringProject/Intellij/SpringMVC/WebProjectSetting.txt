@@ -1,27 +1,23 @@
+웹프로젝트 
 
-Web Project
+1. 프로젝트생성 : intellij
+2. build.gradle : 의존설정 
+   - spring(core, context, webmvc, test, jdbc), log, lombok, jstl, fileupload, db
+3. spring 관련 설정
+   - 설정파일 생성 : /WEB-INF/spring/
+       + root-context.xml 
+	: Spring 기본 설정, DB 설정
+       + servlet-context.xml
+	: MVC 관련설정 -> 어노테이션, 리소스(정적 자원들), view 설정
+	: 
+   - web.xml : 
+       + spring 설정파일 등록 : root-context.xml
+       + Servlet 등록( mapping : "/" ) : servlet-context.xml
 
-1. Create Project : intellij
-
-2. build.gradle : Dependency Setting 
-		- Spring(core, context, test, webmvc, jdbc) / Log / Lombok / Jstl / FileUpload / DB(connectionPool, MyBatis)
-
-3. Setting Spring  : /WEB-INF/spring/
-	- Create SettingFile : 
-		+ root-context.xml
-			: Setting basic Spring / Setting DB 
-		+ servlet-context.xml(MVC) 
-			: Setting MVC -> Annotation, Resources(Static resources) Setting View
-	- web.xml : 
-	  +Regist SpringSettingFile : root-context.xml
-	  + Regist Servlet (mapping : "/") : servlet-context.xml
-
-	- Setting log4j2 : Create log4j2.xml
------------------------------------------------------------------------------------------------------------------------------------
+   - log4j2 설정 : log4j2.xml 설정
+-------------------------------------------------------------------------------
 웹 화면 + 처리
 
-- Contorller : @Controller, @RequestMapping => 필수
-
+- Controller : @Controller, @RequestMapping
 - View( JSP )
-
 - Model : Service, DAO

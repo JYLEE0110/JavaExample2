@@ -20,6 +20,7 @@ public class LoginController {
     public String login(){
         log.info("LoginController...login()...");
 
+
         // post 처리후 redirect
         return "redirect:/sample/sample1";
         // http://localhost:8080/sample/sample1.jsp
