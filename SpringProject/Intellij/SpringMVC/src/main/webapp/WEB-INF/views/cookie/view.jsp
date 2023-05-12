@@ -1,23 +1,19 @@
 <%--
   Created by IntelliJ IDEA.
   User: hi
-  Date: 2023-05-11
-  Time: 오전 11:05
+  Date: 2023-05-12
+  Time: 오후 5:00
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Cookie View</title>
 </head>
 <body>
-  <h1>TodoList</h1>
-
-  <h3>${todoList}</h3>
-  <hr>
-  <a href = "/todo/read">read Page</a>
-  <br>
-  <a href = "/todo/regist">regist Page</a>
-
+    <h1>쿠키 확인</h1>
+    <h3>userId = ${userId}</h3>
+    <h3>auth = ${auth}</h3>
+    <h3>referer = ${Referer}</h3>
 </body>
 </html>
