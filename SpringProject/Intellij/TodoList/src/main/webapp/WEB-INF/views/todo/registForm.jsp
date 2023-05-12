@@ -10,8 +10,9 @@
 <html>
 <head>
     <title>Regist Todo</title>
-    <br>
-    
+    <h1>Regist Todo</h1>
+    <hr>
+
     <form method="post">
         todo <input type="text" name="todo"><br>
         duedate <input type="date" name="duedate"><br>

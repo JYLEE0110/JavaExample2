@@ -27,7 +27,7 @@ public class SearchController {
             HttpServletRequest request,
 
             // 4. beans 이용
-            @ModelAttribute("req") UserRequest userRequest
+            @ModelAttribute("req") UserRequest userRequest // 커멘드 객체
     ){
 
         log.info("/search/search1...");
