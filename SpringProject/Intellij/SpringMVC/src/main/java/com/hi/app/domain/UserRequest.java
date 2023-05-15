@@ -2,6 +2,8 @@ package com.hi.app.domain;
 
 import lombok.*;
 
+import java.time.LocalDate;
+
 @NoArgsConstructor
 @Setter
 @Getter
@@ -13,4 +15,5 @@ public class UserRequest {
     private String keyword;
     private int tno;
     private int page;
+    private LocalDate date;
 }

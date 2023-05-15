@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class SampleController {
     @RequestMapping("/sample/sample1") // localhost:8080/sample/sample1
     public void getPage1(){
-        log.info("SampleCotroller...getPage1()...");
+        log.info("GET | /sample/sample1");
         // void 반환의경우 -> view의 경로는 url설정 경로로 처리
         // return "sample/sample1";
         // /WEB-INF/views/sample/sampl1.jsp
     }
     @RequestMapping("/sample/sample2")
     public void getPage2(Model model){
-        log.info("SampleController...getPage2()...");
+        log.info("GET | /sample/sample2");
 
         // Model 객체는 View와 공유할 수 있는 데이터를 저장하는 객체
         // 매개변수에 Model model 형식으로 선언해주면 Method 호출 시에 현재 Model 객체를 전달 해준다.
@@ -26,7 +26,7 @@ public class SampleController {
     }
     @RequestMapping("/sample/sample3")
     public String getPage3(Model model){
-        log.info("SampleController...getPage3()...");
+        log.info("GET | /sample/sample3");
         model.addAttribute("msg","반갑습니다.");
 
         return "sample/sample2";
