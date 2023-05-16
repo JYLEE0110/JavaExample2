@@ -12,7 +12,7 @@
 
 
 
-    <!-- annotation 확인 => 실행 -->
+    <!-- %필수 annotation 확인 => 실행 -->
     <mvc:annotation-driven/>
 
     <!--정적자원 경로 설정 (Html / CSS / JS / ImageFile)-->
@@ -34,7 +34,7 @@
         </mvc:interceptor>
     </mvc:interceptors>
 
-
+    <!--formatter 등록 설정-->
     <bean id="conversionService" class = "org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="formatters">
             <set>
@@ -42,11 +42,10 @@
             </set>
         </property>
     </bean>
-    <!--formatter 등록 설정-->
     <mvc:annotation-driven conversion-service="conversionService"/>
 
     <!-- bean : 컨테이너에 객체저장 -->
-    <!-- view 설정 -->
+    <!-- %필수 view 설정 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"></property>
         <property name="suffix" value=".jsp"></property>
@@ -59,7 +58,7 @@
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
 
-    <!-- bean 자동등록 설정 : @Controller / @Service / @Repository -->
+    <!-- %필수 bean 자동등록 설정 : @Controller / @Service / @Repository -->
     <context:component-scan base-package="com.hi.app"></context:component-scan>
 
 </beans>

@@ -128,7 +128,7 @@ public class FileUploadController {
         File newFile = new File(dirRealPath,report.getReport().getOriginalFilename());
 
         // 파일 저장
-        report.getReport().transferTo(newFile);
+        report.getReport().transferTo(newFile); // File타입의 경로
         log.info("파일 저장 완료");
 
         return "report/submit3";
