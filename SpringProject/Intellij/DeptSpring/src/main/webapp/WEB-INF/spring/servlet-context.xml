@@ -13,7 +13,7 @@
     <!-- %필수 annotation 확인 => 실행 -->
     <mvc:annotation-driven/>
 
-    <!-- ※필수 bean 자동등록 설정 : @Controller / @Service / @Repository -->
+    <!-- ※필수 bean 자동등록 설정 : @Controller-->
     <context:component-scan base-package="com.hi.deptspring.deptspring.controller"/>
 
     <!-- ※필수 view 설정 -->

@@ -8,6 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 @Data
 @ToString
 @Builder
+//@RequiredArgsConstructor
 public class DeptDTO {
 
     private int deptno;
