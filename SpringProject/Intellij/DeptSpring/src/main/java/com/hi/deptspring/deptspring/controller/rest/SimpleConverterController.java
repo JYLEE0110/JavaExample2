@@ -15,7 +15,7 @@ public class SimpleConverterController {
     }
 
     @PostMapping
-    @ResponseBody
+    @ResponseBody // view 반환이아닌 JSON형식의 데이터를 반환
     public String simple(
             @RequestBody String body
     ){
