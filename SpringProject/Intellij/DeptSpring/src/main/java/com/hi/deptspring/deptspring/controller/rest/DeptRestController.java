@@ -56,7 +56,7 @@ public class DeptRestController {
     }
 
     @GetMapping("/{no}")
-    public  ResponseEntity<DeptDTO> getDept(
+    public ResponseEntity<DeptDTO> getDept(
             @PathVariable("no") int deptno
     ){
         log.info("GET | /api/v1/depts/" + deptno);
@@ -68,7 +68,7 @@ public class DeptRestController {
     }
 
     @PostMapping// /api/v1/depts
-    public String regDept(
+    public ResponseEntity<String> regDept(
             @RequestBody DeptRegistRequest registRequest
             ){
         // JSON 데이터를 JAVA 객체로 받는다. => @RequestBody
@@ -76,13 +76,14 @@ public class DeptRestController {
         log.info("POST | /api/v1/depts");
         log.info("JSON -> DeptregistRequest : " + registRequest);
 
-        registService.registDept(registRequest);
+       int result = registService.registDept(registRequest);
 
-        return "insert OK!";
+        return new ResponseEntity<>("insert " + (result == 1? "OK" : "FAIL"), HttpStatus.OK);
+        // insert OK / insert FAIL
     }
 
     @PutMapping("/{no}")
-    public String edit(
+    public ResponseEntity<String> edit(
             @PathVariable("no") int deptno,
             @RequestBody DeptDTO dto
     ){
@@ -90,19 +91,21 @@ public class DeptRestController {
 //        dto.setDeptno(deptno);
         log.info("JSON -> DeptDTO : " + dto);
 
-        modifyService.modifyDept(dto);
+        int result = modifyService.modifyDept(dto);
+        String msg = "update" + (result == 1 ? "OK" : "FAIL");
 
-        return "update ok";
+        return new ResponseEntity<>(msg, HttpStatus.OK);
     }
 
     @DeleteMapping("/{no}")
-    public String delete(
+    public ResponseEntity<String> delete(
             @PathVariable("no") int deptno
     ){
-        log.info("Delete | /api/v1/depts/" + deptno);
+        log.info("DELETE | /api/v1/depts/" + deptno);
 
-        deleteService.deleteDept(deptno);
+        int result =  deleteService.deleteDept(deptno);
+        String msg = "Delete" + (result == 1 ? "OK" : "FAIL");
 
-        return "delete ok";
+        return new ResponseEntity<>(msg, HttpStatus.OK);
     }
 }
