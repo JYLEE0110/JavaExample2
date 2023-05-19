@@ -21,4 +21,9 @@ public interface BoardMapper {
 
     int deleteBoard(int bno);
 
+    // Paging
+    List<BoardDTO> selectList(int startNum, int count); // selectList(0, 5) #{param1} => 0, #{param2} => 5
+
+    int selectTotalCount();
+
 }

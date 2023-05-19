@@ -54,8 +54,6 @@ public class BoardModifyService {
         log.info(modifyRequest);
 
         // BoardMapper update 요청
-
-
         return boardMapper.updateBoard(modifyRequest);
     }
 }

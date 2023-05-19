@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 @Log4j2
 
@@ -18,12 +20,14 @@ public class BoardDeleteController {
 
     @RequestMapping("/board/delete")
     public String deleteBoard(
-            @RequestParam("bno") int bno
+            @RequestParam("bno") int bno,
+            HttpServletRequest request
     ) {
 
         log.info("POST | /board/delete/" + bno);
 
-        deleteService.deleteBoard(bno);
+
+        deleteService.deleteBoard(bno, request);
 
         return "redirect:/board/list";
     }
