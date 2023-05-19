@@ -15,7 +15,7 @@
   <h1>WritePage</h1>
   <hr>
 
-    <form method="post">
+    <form method="post" enctype="multipart/form-data">
         <table>
             <tr>
                 <td>작성자</td>
@@ -29,6 +29,12 @@
                 <td>내용</td>
                 <td><textarea name="content" id="" cols="20" rows="5" required></textarea></td>
             </tr>
+
+            <tr>
+                <td>첨부파일(이미지)</td>
+                <td><input type="file" name="file"></td>
+            </tr>
+
             <tr>
                 <td></td>
                 <td><input type="reset" value="Reset"> <input type="submit" value="Submit"></td>

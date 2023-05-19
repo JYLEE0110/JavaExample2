@@ -13,6 +13,9 @@
     <!-- %필수 annotation 확인 => 실행 -->
     <mvc:annotation-driven/>
 
+    <!-- fileUpload -->
+    <mvc:resources mapping="/uploadfile/**" location="/uploadfile/"></mvc:resources>
+
     <!-- ※필수 bean 자동등록 설정 : @Controller-->
     <context:component-scan base-package="com.hi.board.controller"/>
 
@@ -22,5 +25,9 @@
         <property name="suffix" value=".jsp"></property>
     </bean>
 
+    <!-- 파일 업로드를 위해서는 multipartResolver를 등록 : 필수 !!! -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
 
 </beans>

@@ -67,4 +67,13 @@ public class ConnectionTest {
 
     }
 
+    @Test
+    public void selectByBnoTest(){
+
+        BoardDTO list = boardMapper.selectByBno(5);
+
+        log.info(list);
+
+    }
+
 }
