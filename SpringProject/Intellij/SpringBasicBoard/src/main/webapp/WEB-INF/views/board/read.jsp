@@ -18,7 +18,8 @@
 
   <h1>ReadPage</h1>
   <hr>
-
+  ${loginInfo}
+  <hr>
   <table border =1>
 
     <tr>

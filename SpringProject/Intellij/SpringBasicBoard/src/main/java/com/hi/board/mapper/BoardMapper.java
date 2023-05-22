@@ -26,4 +26,6 @@ public interface BoardMapper {
 
     int selectTotalCount(BoardSearchOption searchOption);
 
+    /////////////////////////////////////////////////////////////////
+    // Login
 }
