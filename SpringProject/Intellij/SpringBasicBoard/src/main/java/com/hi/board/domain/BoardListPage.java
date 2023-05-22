@@ -4,11 +4,9 @@ import lombok.*;
 
 import java.util.List;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+@Getter
+@Setter
 @ToString
-@Builder
 public class BoardListPage {
 
     // 페이지 당 출력할 게시물의 개수
@@ -72,6 +70,8 @@ public class BoardListPage {
         endNum = realEndNum < endNum ? realEndNum : endNum;
 
         // 이전 유무
+        // ex) 5 => 5-9 => -4 x
+        // ex) 16 => 16-9 => 7 o
         prev = startNum > 1;
 
         // 다음 유무 : 현재 구간의 마지막 번호 < realEndNum
