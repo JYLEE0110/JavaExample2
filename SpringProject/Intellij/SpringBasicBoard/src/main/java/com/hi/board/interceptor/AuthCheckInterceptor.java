@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 @Log4j2
 public class AuthCheckInterceptor implements HandlerInterceptor {
 
-    // 요청
+    // 요청할때
     @Override
     public boolean preHandle(
             HttpServletRequest request,
@@ -28,6 +28,7 @@ public class AuthCheckInterceptor implements HandlerInterceptor {
             log.info("회원 로그인 체크 : 로그인 상태");
             // 있다면 return true
 
+            // 다음 인터셉터로 이동
             return true;
         }
 
@@ -39,7 +40,7 @@ public class AuthCheckInterceptor implements HandlerInterceptor {
         return false;
     }
 
-    // 응답
+    // 응답할때
     @Override
     public void postHandle(
             HttpServletRequest request,

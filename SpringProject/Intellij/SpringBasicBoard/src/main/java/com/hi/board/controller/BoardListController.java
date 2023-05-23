@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class BoardListController {
 
     @Autowired
-    BoardListService listService;
+    private BoardListService listService;
 
     @RequestMapping("/board/list")
     public void boardList(

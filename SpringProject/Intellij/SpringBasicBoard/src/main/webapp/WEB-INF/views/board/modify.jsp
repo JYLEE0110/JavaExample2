@@ -36,10 +36,10 @@
             <td><textarea name="content" cols="20" rows="5">${board.content}</textarea></td>
         </tr>
 
-        <tr>
-            <td>작성자</td>
-            <td><input type="text" name="writer" value="${board.writer}"></td>
-        </tr>
+<%--        <tr>--%>
+<%--            <td>작성자</td>--%>
+<%--            <td><input type="text" name="writer" value="${board.writer}"></td>--%>
+<%--        </tr>--%>
 
 
         <tr>
