@@ -21,3 +21,5 @@ VALUES
  select *from member where uid = 'cool' and pw = '1111';
 -- MemberDTO 데이터 저장 
 -- select idx, uid, uname, uphoto from member where uid = ? and pw = ?;
+
+select count(*) from member where uid = 'cool123';
