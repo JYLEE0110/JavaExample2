@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+ 
+<script src="https://code.jquery.com/jquery-1.12.4.js" integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous"></script>
+
+<script>
+
+	$(document).ready(function(){
+	
+		$.ajax('data.html', {
+			
+			// 요청했을때 받는 응답 데이터(Body안에 data.html)
+			success : (data) => {
+				// 기본 데이터 문자열
+				// JSON -> JS Object 자동변환
+				
+				console.log(data)
+				
+				$('body').html(data)
+			}
+			
+		})
+		
+	})
+	
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>
